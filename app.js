@@ -2,11 +2,7 @@
 
 require('dotenv').load({ silent: true });
 
-var newrelic = require('newrelic');
-
 var logger = require('./lib/logging.js');
-
-var db = require('./model');
 
 var path = require('path');
 var express = require('express');
@@ -29,19 +25,12 @@ app.use(session({
 	saveUninitialized: true
 }));
 
-var passport = require('./passport');
-app.use(passport.initialize());
-app.use(passport.session());
-
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
 app.use(require('./lib/middleware.js'));
 
 app.use('/', require('./routes'));
-app.use('/auth', require('./routes/auth'));
-app.use('/test', require('./routes/test'));
-app.use('/status', require('./routes/status'));
 
 app.use(express.static(__dirname + '/public'));
 

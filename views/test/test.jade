@@ -1,0 +1,6 @@
+extends ../layout
+
+block content
+	section#main
+		if entry
+			p!= md.render(entry.fields.content)

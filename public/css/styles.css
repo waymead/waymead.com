@@ -8,7 +8,7 @@ body {
 	font-family: Poiret One, sans-serif;
 	font-weight: 100;
 	background-color: #222;
-    background: url(../images/bg.jpg);
+    background: url(../images/background.jpg);
 	color: #bbb;
 	display: flex;
 	flex-direction: column;

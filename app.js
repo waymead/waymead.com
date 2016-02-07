@@ -17,6 +17,11 @@ var RedisStore = require('connect-redis')(session);
 var app = express();
 
 app.use(helmet());
+app.use(cookieParser());
+app.use(morgan('combined'));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+//app.use(favicon(__dirname + '/public/images/favicon.ico'));
 
 app.use(session({
 	store: new RedisStore({ url: process.env.REDIS_URL }),
@@ -37,5 +42,5 @@ app.use(express.static(__dirname + '/public'));
 app.set('port', (process.env.PORT || 3000));
 
 app.listen(app.get('port'), function () {
-	logger.log('info', 'Node app is running at localhost:' + app.get('port'))
+	logger.log('info', 'Node app is running at localhost:' + app.get('port'));
 });

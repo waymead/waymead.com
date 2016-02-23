@@ -5,11 +5,12 @@ html {
 	height: 100%;
 }
 body {
-	font-family: sans-serif;
+	font-family: Varela Round, sans-serif;
 	font-weight: 100;
 	background-color: #222;
-    background: url(../images/background.jpg);
-	color: #bbb;
+    background: url(../images/bg.jpg);
+	color: #eee;
+	text-shadow: 2px 2px rgba(0, 0, 0, 0.5);
     padding: 0;
 	margin: 0;
 	height: 100%;
@@ -28,7 +29,9 @@ h1, h2, h3, h4 {
 	font-weight: normal;
 }
 h1 {
-	font-size: 2rem;
+	font-size: 4rem;
+	margin: 0;
+	font-variant: small-caps;
 }
 h2 {
 	font-size: 1.8rem;
@@ -45,12 +48,16 @@ h3 {
 	width: 100%;
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
+	align-content: center;
 }
-#body {
+#main {
 	flex: 1;
 	padding: 0.5rem 20%;
+	margin-top: 4rem;
+	text-align: center;
 }
 #header, #footer {
-	background-color: rgba(0, 0, 0, 0.5);
+	background-color: rgba(0, 0, 0, 0.1);
 	padding: 0.5rem 20%;
 }

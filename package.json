@@ -13,7 +13,9 @@
   },
   "scripts": {
     "start": "node app.js",
-    "test": "snyk test && mocha"
+    "test": "snyk test && mocha",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "author": "Digby Knight",
   "license": "MIT",
@@ -25,19 +27,19 @@
     "express": "^4.13.3",
     "express-session": "^1.12.1",
     "express-winston": "^0.4.1",
-    "helmet": "^0.15.0",
+    "helmet": "^3.6.1",
     "jade": "^1.11.0",
     "morgan": "^1.6.1",
     "path": "^0.12.7",
     "redis": "^2.4.2",
     "serve-favicon": "^2.3.0",
     "winston": "^2.1.1",
-    "winston-loggly": "^1.2.0"
+    "winston-loggly": "^1.2.0",
+    "snyk": "^1.30.1"
   },
   "devDependencies": {
     "mocha": "^2.3.4",
-    "node-mocks-http": "^1.5.1",
-    "snyk": "^1.8.3"
+    "node-mocks-http": "^1.5.1"
   },
   "bugs": {
     "url": "https://github.com/waymead/waymead.com/issues"
@@ -45,5 +47,6 @@
   "homepage": "https://github.com/waymead/waymead.com#readme",
   "directories": {
     "test": "test"
-  }
+  },
+  "snyk": true
 }
